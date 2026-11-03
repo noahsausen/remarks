@@ -2,9 +2,9 @@
 ### Simple social media. Check it out!
 
 > [!IMPORTANT]
-> ### Remarks services are currently unavailable.
+> ### Remarks is undergoing maintenance
 >
-> Remarks is currently undergoing maintenance to deliver important updates and security improvements. During this period, the platform may be temporarily unavailable, and users will not be able to log in. We are currently unable to provide any further details, and we appreciate your patience as we work to upgrade your experience.
+> We are working hard to deliver important updates and security improvements. During this period, the platform may be unstable and certain features may not work as expected. We assure you that the platform will remain secure at all times, and we appreciate your patience as we work to upgrade your experience.
 
 ### Project Stack
 - Hosted with Vercel
