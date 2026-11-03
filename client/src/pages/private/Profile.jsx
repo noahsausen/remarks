@@ -9,7 +9,6 @@ import { formatDistanceToNow } from 'date-fns';
 
 export default function Profile() {
   const { username } = useParams();
-  const [/*user*/, setUser] = useState("");
 
   useEffect(() => {
     const generateRelativeDate = (timestamp) => {
@@ -24,35 +23,10 @@ export default function Profile() {
       }
     }
 
-    var decoded;
-    const verifyToken = async () => {
-      document.getElementById("LoadingBackground").style.display = "flex";
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          window.location.replace("/");
-        }
-        const res = await axios.post("https://remarks-server.vercel.app/auth/verify", {token: token});
-        if (res.data.valid) {
-          decoded = jwtDecode(token);
-          setUser(decoded.user);
-        } else {
-          localStorage.removeItem("token");
-          window.location.replace("/");
-          window.location.reload();
-        }
-      } catch (error) {
-        console.log(error);
-        localStorage.removeItem("token");
-        window.location.replace("/");
-        window.location.reload();
-      }
-    }
-
     const updateFeed = async () => {
       console.log("Update Feed");
       try {
-        const res = await axios.get("https://remarks-server.vercel.app/post/getall");
+        const res = await axios.post("https://remarks-server.vercel.app/post/getusers", {author: username}, {withCredentials: true});
         document.getElementById("Feed").innerHTML = "";
         res.data.posts.forEach((post) => {
           let postDiv = document.createElement("div");
@@ -69,11 +43,11 @@ export default function Profile() {
         })
       } catch (error) {
         console.log(error);
+        window.location.replace("/");
       }
       document.getElementById("LoadingBackground").style.display = "none";
     }
 
-    verifyToken();
     updateFeed();
   }, []);
 
@@ -83,7 +57,6 @@ export default function Profile() {
       <h1 className="HomeHeading">{username}'s posts</h1>
       <p></p>
       <Feed/>
-      {/*<Send author={user.username}/>*/}
       <Loading/>
     </div>
   );

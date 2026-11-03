@@ -41,12 +41,9 @@ export default function Login() {
     }
 
     try {
-      const res= await axios.post("https://remarks-server.vercel.app/auth/login", data);
+      await axios.post("https://remarks-server.vercel.app/auth/login", data, {withCredentials: true});
       // alert("Logged in successfully!");
-      const token = res.data.token;
-      if (token) {
-        localStorage.setItem("token", token);
-      }
+
       document.getElementById("LoadingBackground").style.display = "none";
       window.location.replace("/home");
     } catch (error) {

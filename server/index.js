@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
@@ -12,10 +13,11 @@ const connection = require("./db");
 connection();
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use((req, res, next) => {
   const allowedOrigins = [
-    "http://localhost:3000",
+    // "http://localhost:3000",
     "https://remarks-app.vercel.app"
   ];
   const origin = req.headers.origin;

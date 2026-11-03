@@ -58,13 +58,9 @@ export default function Signup() {
       alert("Invalid email");
     } else {
       try {
-        const res = await axios.post("https://remarks-server.vercel.app/auth/signup", data);
-        const token = res.data.token;
-        if (token) {
-          localStorage.setItem("token", token);
-        }
+        await axios.post("https://remarks-server.vercel.app/auth/signup", data, {withCredentials: true});
         document.getElementById("LoadingBackground").style.display = "none";
-        window.location.replace("/login");
+        window.location.replace("/home");
       } catch (error) {
         document.getElementById("LoadingBackground").style.display = "none";
         alert(error.response.data.message);
