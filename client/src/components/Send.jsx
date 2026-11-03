@@ -5,7 +5,7 @@ import glow from "../assets/glow.png";
 import axios from "axios";
 import {useEffect} from "react";
 
-export default function Send(author) {
+export default function Send() {
   useEffect(() => {
     const postInputField = document.getElementById('PostContent');
     const sendButton = document.getElementById('SendButton');
@@ -39,7 +39,6 @@ export default function Send(author) {
       const content = document.getElementById('PostContent').value.trim();
       document.getElementById('PostContent').value = "";
       const data = {
-        author: author,
         content: content,
       };
       await axios.post("https://remarks-server.vercel.app/post/send", data, {withCredentials: true});

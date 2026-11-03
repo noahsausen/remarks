@@ -57,7 +57,7 @@ export default function Home() {
       <h1 className="HomeHeading">Welcome, {user}.</h1>
       <p className="HomeSubheading">Let's get you caught up.</p>
       <Feed/>
-      <Send author={user}/>
+      <Send/>
       <Loading/>
     </div>
   );

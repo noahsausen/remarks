@@ -7,7 +7,7 @@ export default function App() {
     document.documentElement.scrollTop = document.body.scrollTop = 0;
 
 
-    if (window.location.href === '/home' || window.location.href === '/profile') {
+    if (window.location.pathname === '/home' || window.location.pathname === '/profile') {
       document.getElementById("Logout").style.display = "block";
     }
 

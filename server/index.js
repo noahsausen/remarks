@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 app.use((req, res, next) => {
   const allowedOrigins = [
-    // "http://localhost:3000",
+    "http://localhost:3000",
     "https://remarks-app.vercel.app"
   ];
   const origin = req.headers.origin;

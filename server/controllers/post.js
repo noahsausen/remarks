@@ -10,14 +10,11 @@ exports.sendPost = async (req, res) => {
 
     //console.log(req.body);
     const newPost = new Post({
-      author: req.body.author,
+      author: verified.user.username,
       content: req.body.content,
       timestamp: Date.now(),
     });
 
-    if (newPost.author !== verified.user.username) {
-      return res.status(403).send({message: 'Mismatched author and account'});
-    }
     await newPost.save();
     res.status(200).send({message: "Post created successfully"});
   } catch (error) {
