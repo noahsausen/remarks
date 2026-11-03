@@ -54,10 +54,10 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <h1 className="HomeHeading">Welcome, {user.username}.</h1>
+      <h1 className="HomeHeading">Welcome, {user}.</h1>
       <p className="HomeSubheading">Let's get you caught up.</p>
       <Feed/>
-      <Send author={user.username}/>
+      <Send author={user}/>
       <Loading/>
     </div>
   );

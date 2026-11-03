@@ -39,7 +39,7 @@ export default function Send(author) {
       const content = document.getElementById('PostContent').value.trim();
       document.getElementById('PostContent').value = "";
       const data = {
-        author: author.author,
+        author: author,
         content: content,
       };
       await axios.post("https://remarks-server.vercel.app/post/send", data, {withCredentials: true});

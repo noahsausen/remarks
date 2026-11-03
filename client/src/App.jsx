@@ -5,8 +5,9 @@ import {useEffect} from "react";
 export default function App() {
   useEffect(() => {
     document.documentElement.scrollTop = document.body.scrollTop = 0;
-    const token = localStorage.getItem("token");
-    if (token) {
+
+
+    if (window.location.href === '/home' || window.location.href === '/profile') {
       document.getElementById("Logout").style.display = "block";
     }
 
