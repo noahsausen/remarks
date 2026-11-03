@@ -21,8 +21,8 @@ app.use((req, res, next) => {
   ];
   const origin = req.headers.origin;
 
-  if (!origin || allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin || "https://remarks-app.vercel.app");
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
   }
 
   // res.setHeader(

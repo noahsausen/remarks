@@ -25,7 +25,7 @@ export default function Home() {
     const updateFeed = async () => {
       console.log("Update Feed");
       try {
-        const res = await axios.get("/api/post/getall", {withCredentials: true});
+        const res = await axios.get("https://remarks-server.vercel.app/post/getall", {withCredentials: true});
         setUser(res.data.user);
         document.getElementById("Feed").innerHTML = "";
         res.data.posts.forEach((post) => {
