@@ -16,7 +16,7 @@ exports.sendPost = async (req, res) => {
     });
 
     if (newPost.author !== verified.user.username) {
-      return res.status(403).send({message: 'Forbidden'});
+      return res.status(403).send({message: 'Mismatched author and account'});
     }
     await newPost.save();
     res.status(200).send({message: "Post created successfully"});

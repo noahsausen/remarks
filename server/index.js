@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 const authRoutes = require('./routes/authRoutes');
@@ -22,8 +21,8 @@ app.use((req, res, next) => {
   ];
   const origin = req.headers.origin;
 
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
+  if (!origin || allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin || "https://remarks-app.vercel.app");
   }
 
   // res.setHeader(

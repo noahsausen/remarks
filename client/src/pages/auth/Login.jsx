@@ -41,7 +41,7 @@ export default function Login() {
     }
 
     try {
-      await axios.post("https://remarks-server.vercel.app/auth/login", data, {withCredentials: true});
+      await axios.post("/api/auth/login", data, {withCredentials: true});
       // alert("Logged in successfully!");
 
       document.getElementById("LoadingBackground").style.display = "none";

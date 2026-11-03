@@ -58,7 +58,7 @@ export default function Signup() {
       alert("Invalid email");
     } else {
       try {
-        await axios.post("https://remarks-server.vercel.app/auth/signup", data, {withCredentials: true});
+        await axios.post("/api/auth/signup", data, {withCredentials: true});
         document.getElementById("LoadingBackground").style.display = "none";
         window.location.replace("/home");
       } catch (error) {
