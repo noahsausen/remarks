@@ -1,11 +1,9 @@
 import '../../App.css';
-import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import { formatDistanceToNow } from 'date-fns';
-// import Send from "../../components/Send";
 
 export default function Profile() {
   const { username } = useParams();
@@ -49,7 +47,7 @@ export default function Profile() {
     }
 
     updateFeed();
-  }, []);
+  }, [username]);
 
 
   return (

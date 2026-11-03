@@ -1,5 +1,4 @@
 import '../../App.css';
-import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import Send from "../../components/Send";
