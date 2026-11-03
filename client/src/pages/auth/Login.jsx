@@ -45,7 +45,7 @@ export default function Login() {
       // alert("Logged in successfully!");
 
       document.getElementById("LoadingBackground").style.display = "none";
-      window.location.replace("/home");
+      window.location = "/home";
     } catch (error) {
       document.getElementById("LoadingBackground").style.display = "none";
       alert(error.response.data.message);

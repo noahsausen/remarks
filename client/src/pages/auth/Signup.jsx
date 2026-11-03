@@ -60,7 +60,7 @@ export default function Signup() {
       try {
         await axios.post("https://remarks-server.vercel.app/auth/signup", data, {withCredentials: true});
         document.getElementById("LoadingBackground").style.display = "none";
-        window.location.replace("/home");
+        window.location = "/home";
       } catch (error) {
         document.getElementById("LoadingBackground").style.display = "none";
         alert(error.response.data.message);

@@ -6,6 +6,7 @@ import glow from "../assets/glow.png";
 
 export default function Landing() {
   useEffect(() => {
+    // TODO: switch to checker api
     const token = localStorage.getItem("token");
     if (token) {
       window.location.replace("/home");

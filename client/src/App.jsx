@@ -22,9 +22,8 @@ export default function App() {
   }, []);
 
   function LogoutUser() {
-    localStorage.removeItem("token");
-    window.location.replace("/");
-    window.location.reload();
+    window.location.href = "/";
+    // TODO: use logout api, fix redirect?
   }
 
   return (
